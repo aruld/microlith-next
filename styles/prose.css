@@ -1,0 +1,118 @@
+.prose {
+  @apply md:text-lg;
+
+  & * + p,
+  & * + ul,
+  & * + ol,
+  & * + dl,
+  & * + blockquote:not([class]),
+  & * + pre:not([class]),
+  & * + address,
+  & * + fieldset,
+  & * + figure {
+    margin-top: theme('space.4');
+  }
+
+  & > :first-child {
+    @apply mt-0;
+  }
+
+  & > :last-child {
+    @apply mb-0;
+  }
+
+  & a:not([class]) {
+    @apply font-extrabold text-blue-500 duration-150 bg-gradient-to-r from-blue-100 to-blue-100 transition-all bg-left-bottom bg-no-repeat bg-100/8;
+  }
+
+  & h2,
+  & h3,
+  & h4,
+  & h5 {
+    font-weight: theme('fontWeight.extrabold');
+  }
+
+  & * + h2,
+  & * + h3 {
+    margin-top: theme('space.8');
+  }
+
+  & * + h4,
+  & * + h5 {
+    @apply mt-4;
+  }
+
+  & h2 {
+    @apply text-4xl;
+  }
+
+  & h3 {
+    @apply text-3xl;
+  }
+
+  & h4 {
+    @apply text-2xl;
+  }
+
+  & h5 {
+    @apply text-xl;
+  }
+
+  & ol {
+    @apply pl-4;
+
+    counter-reset: list-counter;
+
+    & > li {
+      @apply relative pl-7;
+
+      counter-increment: list-counter;
+    }
+  }
+
+  & ol > li::before {
+    content: counter(list-counter) '.';
+
+    @apply absolute left-1 font-extrabold text-blue-500;
+  }
+
+  & li {
+    @apply my-2;
+  }
+
+  & ul {
+    @apply pl-4;
+  }
+
+  & ul > li {
+    @apply pl-7 relative;
+  }
+
+  & ul > li::before {
+    content: '';
+
+    @apply absolute left-1 top-2 w-2 h-2 md:top-3 bg-blue-500 ring-2 ring-blue-200 rounded-full;
+  }
+
+  /* Revert any elements with custom classes to their base styles; most likely is a React component */
+  & [class*='no-prose'],
+  & [class*='no-prose'] * {
+    all: inherit;
+  }
+}
+
+/* @NOTE Workaround for some screwy PostCSS and dark mode styles inside of prose */
+
+/* stylelint-disable no-duplicate-selectors */
+.prose a:not([class]) {
+  @apply dark:from-gray-600 dark:to-gray-600 dark:text-gray-100;
+}
+
+.prose ul > li::before {
+  @apply dark:bg-gray-500 dark:ring-gray-700;
+}
+
+.prose ol > li::before {
+  @apply dark:text-gray-500;
+}
+/* stylelint-enable no-duplicate-selectors */

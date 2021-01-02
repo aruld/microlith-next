@@ -1,0 +1,32 @@
+[
+  {
+    "company": "Floify",
+    "title": "Chief Software Engineer",
+    "badge": "May 2013 - Current",
+    "blurb": "Founding engineer, leading product development effort at Floify, a mortgage point-of-sale platform."
+  },
+  {
+    "company": "Flux Corporation",
+    "title": "Software Developer",
+    "badge": "Feb 2008 - Current",
+    "blurb": "Designed and implemtend HTTP backend for the Flux job scheduler, implemented Shoal based clustering of Flux engines and agents"
+  },
+  {
+    "company": "Wells Fargo Home Mortgage",
+    "title": "Consultant",
+    "badge": "Nov 2006 - Dec 2007",
+    "blurb": "Designed document generation and distibution workflows for a large scale Loan Origination system."
+  },
+  {
+    "company": "SpikeSource",
+    "title": "Staff Engineer",
+    "badge": "Apr 2006 - Oct 2006",
+    "blurb": "Lead the effort of developing open source certification tools."
+  },
+  {
+    "company": "HP",
+    "title": "Technical Lead",
+    "badge": "Aug 2000 - Mar 206",
+    "blurb": "Lead design, frontend and backend implementation updates across a vast array of clients and requirements. Was an integral part of client interactions and scoping project specifications."
+  }
+]
