@@ -5,7 +5,6 @@ import { useTheme } from 'next-themes'
 import { motion, useAnimation } from 'framer-motion'
 
 import { ReactComponent as LogoSvg } from '~media/logo.svg'
-// import { ReactComponent as ListLogoSvg } from '~icons/list-logo.svg'
 import { ReactComponent as DarkSvg } from '~icons/dark.svg'
 import { ReactComponent as LightSvg } from '~icons/light.svg'
 import bubbles from '~media/bubbles.svg'
@@ -158,11 +157,11 @@ export default function BaseLayout({ children }) {
                     Credit
                   </LinkUnderline>
                 </div>
-                {/* <div>
-                  <TextLink href="https://list.zslabs.com">
-                    <ListLogoSvg className="text-xl" />
+                <div>
+                  <TextLink href="https://vercel.com">
+                    Hosted on ▲ Vercel
                   </TextLink>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
