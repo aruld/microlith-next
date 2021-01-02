@@ -9,7 +9,7 @@
     "company": "Flux Corporation",
     "title": "Software Developer",
     "badge": "Feb 2008 - Current",
-    "blurb": "Designed and implemtend HTTP backend for the Flux job scheduler, implemented Shoal based clustering of Flux engines and agents"
+    "blurb": "Designed and implemented HTTP backend for the Flux job scheduler, implemented Shoal based clustering of Flux engines and agents"
   },
   {
     "company": "Wells Fargo Home Mortgage",
