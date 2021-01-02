@@ -149,7 +149,7 @@ export default function BaseLayout({ children }) {
                   </LinkUnderline>
                 </div>
                 <div>
-                  <LinkUnderline href="https://github.com/aruld/microlith-dev">
+                  <LinkUnderline href="https://github.com/aruld/microlith-next">
                     Source
                   </LinkUnderline>
                 </div>

@@ -63,8 +63,7 @@ export default function AboutModal() {
             <TextLink href="https://reactjs.org">React</TextLink>,{' '}
             <TextLink href="https://svelte.dev/">Svelte</TextLink>,{' '}
             <TextLink href="https://nextjs.org">Next.js</TextLink>, and{' '}
-            <TextLink href="https://nodejs.org">Node</TextLink>
-            to build web applications that scale.
+            <TextLink href="https://nodejs.org">Node.</TextLink>
           </p>
           <p>
             I am a software engineer, doing 80:20 backend:frontend, mission is
