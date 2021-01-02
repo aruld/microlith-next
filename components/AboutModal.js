@@ -59,34 +59,17 @@ export default function AboutModal() {
         </div>
         <Prose>
           <p>
-            I am interested to develop elegant UIs using frameworks like{' '}
+            I am interested in developing elegant UIs using frameworks like{' '}
             <TextLink href="https://reactjs.org">React</TextLink>,{' '}
             <TextLink href="https://svelte.dev/">Svelte</TextLink>,{' '}
             <TextLink href="https://nextjs.org">Next.js</TextLink>, and{' '}
             <TextLink href="https://nodejs.org">Node.</TextLink>
           </p>
           <p>
-            I am a software engineer, doing 80:20 backend:frontend, mission is
-            to become a full-stack developer and have fun learning new tools and
-            frameworks.
+            I am a software engineer with 20+ years of experience mostly in
+            backend development, mission 2021 is to become a full-stack
+            developer and have fun learning new tools and modern frameworks.
           </p>
-          {/* <h3>Speaking/consulting</h3>
-          <p>
-            Have a project you'd like me to be part of?{' '}
-            <TextLink href="mailto:info@zslabs.com" onClick={toggle}>
-              Let's chat
-            </TextLink>
-            .
-          </p>
-          <h3>How'd you build this site?</h3>
-          <p>
-            Because I love open-source&mdash;it's available for anyone to use.
-            Find a bug? Report it!{' '}
-            <TextLink href="https://github.com/zslabs/zslabs-next">
-              View source
-            </TextLink>
-            .
-          </p> */}
         </Prose>
       </Modal>
     </>
