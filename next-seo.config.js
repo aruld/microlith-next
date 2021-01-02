@@ -7,7 +7,7 @@ const SEO = {
   canonical: 'https://microlith.dev',
   openGraph: {
     type: 'website',
-    locale: 'en_IE',
+    locale: 'en_US',
     url: 'https://microlith.dev',
     title,
     description,

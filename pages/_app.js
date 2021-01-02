@@ -20,7 +20,7 @@ Router.events.on('routeChangeComplete', (url) => {
 
   if (typeof window !== 'undefined') {
     setTimeout(() => {
-      window.gtag('config', 'UA-17637644-1', {
+      window.gtag('config', 'G-QC2JC773S6', {
         page_location: url,
         page_title: document.title,
       })

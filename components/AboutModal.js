@@ -51,7 +51,7 @@ export default function AboutModal() {
           <TextLink href="https://www.linkedin.com/in/aruld/">
             <Button
               iconOnly
-              className="from-blue-600 to-blue-400 ring-blue-600"
+              className="from-blue-700 to-blue-700 ring-blue-700"
             >
               <LinkedInSvg className="text-2xl" />
             </Button>
@@ -62,13 +62,14 @@ export default function AboutModal() {
             I am interested in developing elegant UIs using frameworks like{' '}
             <TextLink href="https://reactjs.org">React</TextLink>,{' '}
             <TextLink href="https://svelte.dev/">Svelte</TextLink>,{' '}
+            <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>,{' '}
             <TextLink href="https://nextjs.org">Next.js</TextLink>, and{' '}
             <TextLink href="https://nodejs.org">Node.</TextLink>
           </p>
           <p>
-            I am a software engineer with 20+ years of experience mostly in
-            backend development, mission 2021 is to become a full-stack
-            developer and have fun learning new tools and modern frameworks.
+            I am a software engineer with over 20 years of experience mostly in
+            backend technologies. Mission 2021 is to become a full-stack
+            developer and have fun learning new tools and modern web frameworks.
           </p>
         </Prose>
       </Modal>

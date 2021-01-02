@@ -3,7 +3,7 @@ export default function Analytics() {
     <>
       <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-17637644-1"
+        src="https://www.googletagmanager.com/gtag/js?id=G-QC2JC773S6"
       />
       <script
         // eslint-disable-next-line react/no-danger
@@ -12,7 +12,7 @@ export default function Analytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-17637644-1');
+            gtag('config', 'G-QC2JC773S6');
           `,
         }}
       />

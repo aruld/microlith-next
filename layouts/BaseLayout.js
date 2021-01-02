@@ -155,7 +155,7 @@ export default function BaseLayout({ children }) {
                 </div>
                 <div>
                   <LinkUnderline href="https://github.com/zslabs/zslabs-next">
-                    Powered by Vercel
+                    Credit
                   </LinkUnderline>
                 </div>
                 {/* <div>
