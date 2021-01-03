@@ -3,7 +3,6 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, FormProvider } from 'react-hook-form'
 import axios from 'redaxios'
-import qs from 'qs'
 import to from 'await-to-js'
 
 import Button from '~components/Button'
@@ -37,9 +36,11 @@ const ContactForm = (props) => {
     const [, success] = await to(
       axios({
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        data: qs.stringify(data),
+        headers: { Accept: 'application/json' },
+        data: { data },
         url: 'https://formspree.io/f/xrgoonwr',
+      }).then((result) => {
+        return result.ok === true
       })
     )
 
