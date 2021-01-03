@@ -37,7 +37,7 @@ const ContactForm = (props) => {
       axios({
         method: 'POST',
         headers: { Accept: 'application/json' },
-        data: { data },
+        data: data,
         url: 'https://formspree.io/f/xrgoonwr',
       }).then((result) => {
         return result.ok === true
