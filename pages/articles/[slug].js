@@ -56,7 +56,7 @@ export default function Post({ post }) {
   return (
     <Section>
       <SEO title={post.title} />
-      
+
       <article>
         <ScrollIndicator className="fixed hidden md:block top-2 left-2 w-8 h-8 text-blue-500" />
         <motion.header

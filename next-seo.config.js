@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://microlith.dev/me.jpeg',
+        url: 'https://microlith.dev/me.png',
         alt: title,
         width: 460,
         height: 460,
