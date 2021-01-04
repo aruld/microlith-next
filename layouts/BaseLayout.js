@@ -97,6 +97,7 @@ export default function BaseLayout({ children }) {
             <TextLink
               href="/"
               className="transform duration-300 hover:scale-110 ease-bounce block"
+              aria-label="Home"
             >
               <LogoSvg className="h-12 from-indigo-700 to-blue-500 " />
             </TextLink>
@@ -138,7 +139,7 @@ export default function BaseLayout({ children }) {
             <div className="bg-gradient-to-tr from-indigo-700 to-blue-500 w-2/4 rounded-full h-0.5" />
             <div className="bg-gradient-to-tr from-indigo-700 to-blue-500 w-2/6 rounded-full h-0.5" />
             <div className="grid gap-2 grid-cols-1 text-sm mt-4">
-              <div className="text-gray-500 dark:text-gray-300">
+              <div>
                 Copyright &copy; {new Date().getFullYear()} Arul Dhesiaseelan
               </div>
               <div className="font-extrabold grid gap-4 grid-flow-col auto-cols-auto justify-center items-center">
