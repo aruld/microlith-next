@@ -19,14 +19,25 @@ export default function AboutModal() {
     <>
       <button
         type="button"
+        aria-label="About the author"
         className="block w-12 h-12 overflow-hidden rounded-full shadow-md transform duration-300 hover:scale-110 hover:shadow-lg focus:outline-none ease-bounce"
         onClick={toggle}
       >
-        <Image src="/me.png" width="48" height="48" />
+        <Image
+          src="/me.png"
+          alt="Picture of the author"
+          width="48"
+          height="48"
+        />
       </button>
       <Modal open={open} setIsOpen={toggle}>
         <div className="rounded-full overflow-hidden w-24 h-24 shadow-lg mx-auto mb-8">
-          <Image src="/me.png" width="96" height="96" />
+          <Image
+            src="/me.png"
+            alt="Picture of the author"
+            width="96"
+            height="96"
+          />
         </div>
         <h3 className="text-4xl font-extrabold text-center mb-4">
           Hi, I'm Arul

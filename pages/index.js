@@ -123,7 +123,7 @@ export default function Home({ latestPost }) {
   const introTitleSubControls = useAnimation()
   const buttonControls = useAnimation()
   const latestArticleControls = useAnimation()
-  const projectsControls = useAnimation()
+  // const projectsControls = useAnimation()
 
   const pageAnimation = React.useCallback(async () => {
     await introTitleControls.start('visible')
@@ -134,13 +134,13 @@ export default function Home({ latestPost }) {
 
     await latestArticleControls.start('visible')
 
-    await projectsControls.start('visible')
+    // await projectsControls.start('visible')
   }, [
     introTitleControls,
     introTitleSubControls,
     buttonControls,
     latestArticleControls,
-    projectsControls,
+    // projectsControls,
   ])
 
   React.useEffect(() => {

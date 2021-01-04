@@ -32,12 +32,12 @@ const ContactForm = (props) => {
 
   const [response, setResponse] = React.useState()
 
-  const handleSubmit = async (data) => {
+  const handleSubmit = async (formData) => {
     const [, success] = await to(
       axios({
         method: 'POST',
         headers: { Accept: 'application/json' },
-        data: data,
+        data: formData,
         url: 'https://formspree.io/f/xrgoonwr',
       }).then((result) => {
         return result.ok === true
