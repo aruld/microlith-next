@@ -140,7 +140,9 @@ export default function BaseLayout({ children }) {
             <div className="bg-gradient-to-tr from-indigo-700 to-blue-500 w-2/6 rounded-full h-0.5" />
             <div className="grid gap-2 grid-cols-1 text-sm mt-4">
               <div>
-                Copyright &copy; {new Date().getFullYear()} Arul Dhesiaseelan
+                <LinkUnderline href="https://arul.dev">
+                  Copyright &copy; {new Date().getFullYear()} Arul Dhesiaseelan
+                </LinkUnderline>
               </div>
               <div className="font-extrabold grid gap-4 grid-flow-col auto-cols-auto justify-center items-center">
                 <div>
@@ -157,9 +159,9 @@ export default function BaseLayout({ children }) {
                   </LinkUnderline>
                 </div>
                 <div>
-                  <TextLink href="https://vercel.com">
-                    Hosted on ▲ Vercel
-                  </TextLink>
+                  <LinkUnderline href="https://vercel.com">
+                    Powered by ▲
+                  </LinkUnderline>
                 </div>
               </div>
             </div>
