@@ -28,6 +28,7 @@ export default function AboutModal() {
           alt="Picture of the author"
           width="48"
           height="48"
+          layout="responsive"
         />
       </button>
       <Modal open={open} setIsOpen={toggle}>

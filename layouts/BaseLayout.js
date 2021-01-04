@@ -160,7 +160,7 @@ export default function BaseLayout({ children }) {
                 </div>
                 <div>
                   <LinkUnderline href="https://vercel.com">
-                    Powered by ▲
+                    Powered by ▲ Vercel
                   </LinkUnderline>
                 </div>
               </div>
