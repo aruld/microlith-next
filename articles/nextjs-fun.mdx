@@ -1,0 +1,51 @@
+---
+title: Next.js fun!
+date: 2021/01/09
+---
+
+I have been wanting to learn modern web frameworks for quite some time. With the recent [announcement](https://reactjs.org/blog/2020/12/21/data-fetching-with-react-server-components.html) of React Server Components, the timing couldn't be better as I have decent experience on all things server-side.
+
+I have heard great things about [Next.js](https://nextjs.org/) + [Vercel](https://vercel.com/) and started looking into it. Last week, I ran into this [project](https://github.com/zslabs/zslabs-next) from [Zach](https://twitter.com/zslabs) who revamped his [website](https://zslabs.com/) using Next.js. I got sucked into his simplistic design elements and implementation stack.
+
+It took me a weekend to get all this setup, which is amazing. I have hosted my blogs in wordpress, hosting this website in Vercel is amazing, which makes deployments breeze (git commits triggers a new deployment, that simple!), their tooling is impressive!
+
+Production build just under 17 seconds!
+
+```
+arul@MacBook-Pro microlith-next % yarn build
+yarn run v1.22.10
+$ next build
+info  - Creating an optimized production build  
+info  - Compiled successfully
+info  - Collecting page data  
+info  - Generating static pages (5/5)
+info  - Finalizing page optimization  
+
+Page                                                           Size     First Load JS
+┌ ● /                                                          3.05 kB         118 kB
+├   /_app                                                      0 B             115 kB
+├ ○ /404                                                       778 B           116 kB
+├ ● /articles/[slug]                                           40.5 kB         155 kB
+├   └ /articles/nextjs-fun
+├ ○ /contact                                                   32.1 kB         147 kB
+└ ● /experience                                                3.64 kB         119 kB
++ First Load JS shared by all                                  115 kB
+  ├ chunks/05d954cf.a76516.js                                  23 kB
+  ├ chunks/6a698c63006b52ec64a782885ce7787f7a68fbf2.e27b96.js  3.61 kB
+  ├ chunks/a256d58a6c6b8e7d848a30e7ed723a0bf685ae5b.602f01.js  11.3 kB
+  ├ chunks/c55e877df30d4fa0e18d3fd5c5f8fe9b39570689.c99c13.js  5.24 kB
+  ├ chunks/commons.54634c.js                                   8.53 kB
+  ├ chunks/framework.9d5241.js                                 41.8 kB
+  ├ chunks/main.60aae9.js                                      5.74 kB
+  ├ chunks/pages/_app.62cbe4.js                                15 kB
+  ├ chunks/webpack.50bee0.js                                   751 B
+  └ css/12a02980334a4ce31510.css                               5.93 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+
+$ next-sitemap
+✨  Done in 16.63s.
+```

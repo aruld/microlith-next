@@ -1,5 +1,6 @@
 {
   "redirects": [
-    { "source": "/resume", "destination": "/experience/" }
+    { "source": "/resume", "destination": "/experience/" },
+    { "source": "/articles/nextjs-playground", "destination": "/articles/nextjs-fun" }
   ]
 }
