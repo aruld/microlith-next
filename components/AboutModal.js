@@ -89,16 +89,6 @@ export default function AboutModal() {
             new tools and modern frameworks and document my adventures in this
             website.
           </p>
-          <p>
-            This website is built off of{' '}
-            <TextLink href="https://github.com/zslabs/zslabs-next">
-              Zach Schnackel's
-            </TextLink>{' '}
-            Next.js project. Thank you{' '}
-            <TextLink href="https://twitter.com/zslabs">Zach</TextLink> for your
-            work in making Next.js learning fun and helping set this great
-            website.
-          </p>
         </Prose>
       </Modal>
     </>
