@@ -21,7 +21,7 @@ function HeaderItemWrapper({ runAnimation, controls, custom, ...rest }) {
   const variants = {
     hidden: {
       opacity: 0,
-      y: -32,
+      y: '-2rem',
     },
     visible: {
       opacity: 1,
@@ -62,6 +62,17 @@ export default function BaseLayout({ children }) {
 
   const runAnimation = pathname === '/'
 
+  const footerVariants = {
+    hidden: {
+      opacity: 0,
+      y: '2rem',
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  }
+
   // After mounting, we have access to the theme
   React.useEffect(() => setMounted(true), [])
 
@@ -99,7 +110,7 @@ export default function BaseLayout({ children }) {
               className="transform duration-300 hover:scale-110 ease-bounce block"
               aria-label="Home"
             >
-              <LogoSvg className="h-12 from-indigo-700 to-blue-500 " />
+              <LogoSvg className="h-6 text-indigo-500 dark:text-gray-300" />
             </TextLink>
           </HeaderItemWrapper>
           <HeaderItemWrapper
@@ -134,12 +145,18 @@ export default function BaseLayout({ children }) {
           </HeaderItemWrapper>
         </Section>
         {children}
-        <Section as="footer">
+        <Section
+          as={motion.footer}
+          animate={controls}
+          variants={footerVariants}
+          transition={spring}
+          initial={runAnimation ? 'hidden' : false}
+        >
           <div className="grid grid-cols-1 gap-4 justify-items-center">
             <div className="bg-gradient-to-tr from-indigo-700 to-blue-500 w-2/4 rounded-full h-0.5" />
             <div className="bg-gradient-to-tr from-indigo-700 to-blue-500 w-2/6 rounded-full h-0.5" />
             <div className="grid gap-2 grid-cols-1 text-sm mt-4">
-              <div>
+              <div className="text-gray-500 dark:text-gray-300">
                 <LinkUnderline href="https://arul.dev">
                   Copyright &copy; {new Date().getFullYear()} Arul Dhesiaseelan
                 </LinkUnderline>

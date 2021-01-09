@@ -83,8 +83,21 @@ export default function AboutModal() {
           </p>
           <p>
             I am a software engineer with over 20 years of experience mostly in
-            backend technologies. Mission 2021 is to become a full-stack
-            developer and have fun learning new tools and modern web frameworks.
+            backend technologies. I have done some HTML, CSS (Bootstrap),
+            JavaScript (jQuery) work over the years. Mission 2021 is to update
+            to recent trends in front-end development and have fun in learning
+            new tools and modern frameworks and document my adventures in this
+            website.
+          </p>
+          <p>
+            This website is built off of{' '}
+            <TextLink href="https://github.com/zslabs/zslabs-next">
+              Zach Schnackel's
+            </TextLink>{' '}
+            Next.js project. Thank you{' '}
+            <TextLink href="https://twitter.com/zslabs">Zach</TextLink> for your
+            work in making Next.js learning fun and helping set this great
+            website.
           </p>
         </Prose>
       </Modal>
