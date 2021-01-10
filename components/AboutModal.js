@@ -1,15 +1,13 @@
-import * as React from 'react'
 import Image from 'next/image'
-
-import Modal from './Modal'
-import TextLink from './TextLink'
-import Button from './Button'
-import Prose from './Prose'
-
-import { ReactComponent as TwitterSvg } from '~icons/twitter.svg'
+import * as React from 'react'
+import useAboutModalState from '~hooks/useAboutModalState'
 import { ReactComponent as GitHubSvg } from '~icons/github.svg'
 import { ReactComponent as LinkedInSvg } from '~icons/linkedin.svg'
-import useAboutModalState from '~hooks/useAboutModalState'
+import { ReactComponent as TwitterSvg } from '~icons/twitter.svg'
+import Button from './Button'
+import Modal from './Modal'
+import Prose from './Prose'
+import TextLink from './TextLink'
 
 export default function AboutModal() {
   const open = useAboutModalState((state) => state.open)
@@ -84,10 +82,14 @@ export default function AboutModal() {
           <p>
             I am a software engineer with over 20 years of experience mostly in
             backend technologies. I have done some HTML, CSS (Bootstrap),
-            JavaScript (jQuery) work over the years. Mission 2021 is to update
-            to recent trends in front-end development and have fun in learning
-            new tools and modern frameworks and document my adventures in this
-            website.
+            JavaScript (jQuery) work over the years.{' '}
+          </p>
+          <p>
+            <TextLink href="https://arul.dev/2021/01/09/mission-2021/">
+              Mission 2021
+            </TextLink>{' '}
+            is to catch up with recent trends in front-end development and have
+            fun learning new tools and frameworks and document the experience.
           </p>
         </Prose>
       </Modal>
