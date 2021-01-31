@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import * as React from 'react'
-import useAboutModalState from '~hooks/useAboutModalState'
-import { ReactComponent as GitHubSvg } from '~icons/github.svg'
-import { ReactComponent as LinkedInSvg } from '~icons/linkedin.svg'
-import { ReactComponent as TwitterSvg } from '~icons/twitter.svg'
+
 import Button from './Button'
 import Modal from './Modal'
 import Prose from './Prose'
 import TextLink from './TextLink'
+
+import useAboutModalState from '~hooks/useAboutModalState'
+import { ReactComponent as GitHubSvg } from '~icons/github.svg'
+import { ReactComponent as LinkedInSvg } from '~icons/linkedin.svg'
+import { ReactComponent as TwitterSvg } from '~icons/twitter.svg'
 
 export default function AboutModal() {
   const open = useAboutModalState((state) => state.open)

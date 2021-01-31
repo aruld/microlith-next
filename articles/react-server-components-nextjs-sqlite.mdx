@@ -1,0 +1,108 @@
+---
+title: React server components using Next.js and Prisma
+date: 2021/01/31
+---
+[Next.js](https://github.com/vercel/next-server-components) has ported the react server components [demo](https://github.com/reactjs/server-components-demo) using redis as its backend store.
+
+In this post, I will show how to use Prisma to abstract database calls using its built in support for SQLite.
+
+To add Primsa to your Next.js project, run these commands in project's root directory.
+
+1. install Prisma CLI to your project:
+  ```
+  npm install @prisma/cli --save-dev
+  ```
+  This should update your package.json devDependencies section
+  ```json
+    "devDependencies": {
+    ...  
+    "@prisma/cli": "2.15.0",
+    ...
+  }
+  ```
+
+2. initialize your Prisma setup with the following command:
+  ```
+  npx prisma init
+  ```
+
+  This will generate a prisma folder which has your schema definition and migrations.
+  Create a dev.db file in this folder, this will be our sqlite database.
+  
+  SQLite does not support date, so will be storing `updated_at` as a String type.
+
+  ```js filename=schema.prisma
+  datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+  }
+
+  generator client {
+    provider = "prisma-client-js"
+  }
+
+  model Note {
+    id Int @id @default(autoincrement())
+    title String?
+    body String?
+    updated_at String
+    created_by String
+  }
+  ```
+
+3. install Prisma client to your project:
+  ```
+  npm install @prisma/client
+  ```
+
+  This should update your package.json dependencies section
+  ```json
+    "dependencies": {
+    ...  
+    "@prisma/client": "2.15.0",
+    ...
+  }
+  ```
+
+4. run migration on your sqlite dev database:
+  ```
+  npx prisma migrate dev --name init --preview-feature
+  ```
+
+
+You could install Prisma [Studio](https://github.com/prisma/studio/releases) to view your data, comes very handy for sqlite.
+
+
+<Image src="/uploads/prisma-studio-sqlite-dark.png" width="1500" height="600" />
+
+
+To retrive list of notes ordered by its id descending:
+
+```js
+const notes = await prisma.note.findMany({
+  orderBy: [
+    {
+      id: 'desc',
+    },
+  ],
+})
+```
+
+To create a new note:
+
+```js
+const newNote = await prisma.note.create({
+  data: {
+    title: (req.body.title || '').slice(0, 255),
+    updated_at: new Date().toISOString(),
+    body: (req.body.body || '').slice(0, 2048),
+    created_by: login,
+  },
+})
+```
+
+React notes app using SQLite database with Prisma
+
+<Image src="/uploads/nextjs-prisma-notes-app.png" width="1400" height="800" />
+
+You can find the source code for this project in [github](https://github.com/aruld/server-components-next-sqlite).
