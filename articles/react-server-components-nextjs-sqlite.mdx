@@ -77,9 +77,18 @@ You could install Prisma [Studio](https://github.com/prisma/studio/releases) to 
 <Image src="/uploads/prisma-studio-sqlite-dark.png" width="1500" height="600" />
 
 
+PrismaClient is created in **prisma.js** under the libs top-level directory. This instance is shared across the API routes.
+
+```js filename=prisma.js
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient();
+export default prisma;
+```
+
 To retrive list of notes ordered by its id descending:
 
-```js
+```js filename=index.js
 const notes = await prisma.note.findMany({
   orderBy: [
     {
@@ -91,7 +100,7 @@ const notes = await prisma.note.findMany({
 
 To create a new note:
 
-```js
+```js filename=index.js
 const newNote = await prisma.note.create({
   data: {
     title: (req.body.title || '').slice(0, 255),
@@ -102,7 +111,7 @@ const newNote = await prisma.note.create({
 })
 ```
 
-React notes app using SQLite database with Prisma
+React notes Next.js app using SQLite database with Prisma
 
 <Image src="/uploads/nextjs-prisma-notes-app.png" width="1400" height="800" />
 
