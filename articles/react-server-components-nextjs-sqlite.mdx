@@ -13,7 +13,7 @@ To add Primsa to your Next.js project, run these commands in project's root dire
   ```
   npm install @prisma/cli --save-dev
   ```
-  This should update your package.json devDependencies section
+  This should update your package.json **devDependencies** section
   ```json
     "devDependencies": {
     ...  
@@ -30,7 +30,7 @@ To add Primsa to your Next.js project, run these commands in project's root dire
   This will generate a prisma folder which has your schema definition and migrations.
   Create a dev.db file in this folder, this will be our sqlite database.
   
-  SQLite does not support date, so will be storing `updated_at` as a String type.
+  SQLite does not support date, so will be storing **updated_at** as a String type.
 
   ```js filename=schema.prisma
   datasource db {
@@ -56,7 +56,7 @@ To add Primsa to your Next.js project, run these commands in project's root dire
   npm install @prisma/client
   ```
 
-  This should update your package.json dependencies section
+  This should update your package.json **dependencies** section
   ```json
     "dependencies": {
     ...  
@@ -110,5 +110,12 @@ You can find the source code for this project in [github](https://github.com/aru
 
 ### Notes
 
+*  To use the authentication component in this demo, you need to create an Github [OAuth app](https://github.com/settings/developers) and configure the secrets in **.env** file in the root of the project.
+  ```properties filename=.env
+  ENDPOINT='http://localhost:3000'
+  SESSION_KEY='<random key for cookie-based session>'
+  OAUTH_CLIENT_KEY='github oauth app id'
+  OAUTH_CLIENT_SECRET='github oauth app secret'
+  ```
 * It works with Node.js versions 14 LTS, not the latest 15. There is an open [issue](https://github.com/vercel/next-server-components/issues/2) regarding this.
 * You cannot host this app in [Vercel](https://vercel.com) as they do not support [SQLite](https://github.com/vercel/vercel/discussions/4443) which stores data locally.
