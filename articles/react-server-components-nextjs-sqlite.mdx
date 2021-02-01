@@ -3,8 +3,9 @@ title: React server components using Next.js and Prisma
 date: 2021/01/31
 ---
 [Next.js](https://github.com/vercel/next-server-components) has ported the react server components [demo](https://github.com/reactjs/server-components-demo) using redis as its backend store.
+[Prisma](https://github.com/prisma/server-components-demo) has its own port of the react server components demo which uses SQLite.
 
-In this post, I will show how to use Prisma to abstract database calls using its built in support for SQLite.
+In this post, I will show how to use Prisma to abstract database queries using its built in support for SQLite in a Next.js app.
 
 To add Primsa to your Next.js project, run these commands in project's root directory.
 
@@ -106,3 +107,8 @@ React notes app using SQLite database with Prisma
 <Image src="/uploads/nextjs-prisma-notes-app.png" width="1400" height="800" />
 
 You can find the source code for this project in [github](https://github.com/aruld/server-components-next-sqlite).
+
+### Notes
+
+* It works with Node.js versions 14 LTS, not the latest 15. There is an open [issue](https://github.com/vercel/next-server-components/issues/2) regarding this.
+* You cannot host this app in [Vercel](https://vercel.com) as they do not support [SQLite](https://github.com/vercel/vercel/discussions/4443) which stores data locally.
