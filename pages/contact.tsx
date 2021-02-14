@@ -3,7 +3,7 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, FormProvider } from 'react-hook-form'
 import axios from 'redaxios'
-import to from 'await-to-js'
+import { NextPage } from 'next'
 
 import Button from '~components/Button'
 import Input from '~components/Input'
@@ -15,14 +15,23 @@ import Prose from '~components/Prose'
 import SEO from '~components/SEO'
 
 const schema = yup.object().shape({
+  __gotcha: yup.string().max(0),
   name: yup.string().required().trim().label('Name'),
   email: yup.string().required().email().trim().label('Email'),
   message: yup.string().required().trim().label('Message'),
 })
 
-const ContactForm = (props) => {
-  const methods = useForm({
+type FormValues = {
+  _gotcha?: string
+  name: string
+  email: string
+  message: string
+}
+
+const ContactForm: React.FC = () => {
+  const methods = useForm<FormValues>({
     defaultValues: {
+      _gotcha: '',
       name: '',
       email: '',
       message: '',
@@ -30,25 +39,20 @@ const ContactForm = (props) => {
     resolver: yupResolver(schema),
   })
 
-  const [response, setResponse] = React.useState()
+  const [response, setResponse] = React.useState<string | null>()
 
-  const handleSubmit = async (formData) => {
-    const [, success] = await to(
-      axios({
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        data: formData,
-        url: 'https://formspree.io/f/xrgoonwr',
-      }).then((result) => {
-        return result.ok === true
-      })
-    )
-
-    if (success) {
+  async function handleSubmit(formData: FormValues): Promise<void> {
+    axios({
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      data: formData,
+      url: 'https://formspree.io/f/xrgoonwr',
+    }).then(() => {
       setResponse('success')
-    } else {
-      setResponse('error')
-    }
+    })
+      .catch(() => {
+        setResponse('error')
+      })
   }
 
   return (
@@ -70,27 +74,34 @@ const ContactForm = (props) => {
             name="contact"
             noValidate
             onSubmit={methods.handleSubmit(handleSubmit)}
-            {...props}
           >
-            <Input
-              label="Name"
-              name="name"
+            <input
+              type="hidden"
+              name="_gotcha"
+              className="sr-only"
               ref={methods.register}
-              required
-              validationMessage={
-                methods.errors?.name && methods.errors.name.message
-              }
             />
-            <Input
-              label="Email"
-              type="email"
-              name="email"
-              ref={methods.register}
-              validationMessage={
-                methods.errors?.email && methods.errors.email.message
-              }
-              required
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input
+                label="Name"
+                name="name"
+                ref={methods.register}
+                required
+                validationMessage={
+                  methods.errors?.name && methods.errors.name.message
+                }
+              />
+              <Input
+                label="Email"
+                type="email"
+                name="email"
+                ref={methods.register}
+                validationMessage={
+                  methods.errors?.email && methods.errors.email.message
+                }
+                required
+              />
+            </div>
             <Textarea
               label="Message"
               name="message"
@@ -116,7 +127,7 @@ const ContactForm = (props) => {
   )
 }
 
-export default function Contact() {
+const Contact: NextPage = () => {
   return (
     <Section className="grid grid-cols-1 md:grid-cols-3/4 justify-center relative">
       <SectionTitle className="grid place-items-center">
@@ -136,3 +147,5 @@ export default function Contact() {
     </Section>
   )
 }
+
+export default Contact
