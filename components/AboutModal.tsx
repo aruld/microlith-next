@@ -74,12 +74,8 @@ const AboutModal: React.FC = () => {
         </div>
         <Prose>
           <p>
-            I am interested in developing elegant UIs using frameworks like{' '}
-            <TextLink href="https://reactjs.org">React</TextLink>,{' '}
-            <TextLink href="https://svelte.dev/">Svelte</TextLink>,{' '}
-            <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>,{' '}
-            <TextLink href="https://nextjs.org">Next.js</TextLink>, and{' '}
-            <TextLink href="https://nodejs.org">Node.</TextLink>
+            I am exploring UI development using <TextLink href="https://nextjs.org">Next.js</TextLink> React framework
+            and{' '} <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>
           </p>
           <p>
             I am a software engineer with over 20 years of experience mostly in
