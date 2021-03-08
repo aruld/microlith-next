@@ -34,8 +34,8 @@ export const BubbleListItem: React.FC<BubbleListItemProps> = ({
                 {title}
               </LinkUnderline>
             ) : (
-                title
-              )}
+              title
+            )}
           </h3>
           {badge && (
             <div className="justify-self-end">

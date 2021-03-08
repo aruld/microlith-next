@@ -143,8 +143,8 @@ const BaseLayout: React.FC = ({ children }) => {
                 {theme === 'light' ? (
                   <DarkSvg className="h-8 w-8 stroke-1.5" />
                 ) : (
-                    <LightSvg className="h-8 w-8 stroke-1.5" />
-                  )}
+                  <LightSvg className="h-8 w-8 stroke-1.5" />
+                )}
               </button>
             )}
             <AboutModal />

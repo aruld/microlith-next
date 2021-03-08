@@ -47,9 +47,10 @@ const ContactForm: React.FC = () => {
       headers: { Accept: 'application/json' },
       data: formData,
       url: 'https://formspree.io/f/xrgoonwr',
-    }).then(() => {
-      setResponse('success')
     })
+      .then(() => {
+        setResponse('success')
+      })
       .catch(() => {
         setResponse('error')
       })

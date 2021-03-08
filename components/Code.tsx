@@ -60,19 +60,19 @@ export default function Code({
               {isCopied ? (
                 <ClipboardCheckSvg className="w-6 h-6" />
               ) : (
-                  <CopyToClipboard
-                    text={codeString}
-                    onCopy={() => setCopied(true)}
+                <CopyToClipboard
+                  text={codeString}
+                  onCopy={() => setCopied(true)}
+                >
+                  <button
+                    type="button"
+                    className="block focus:outline-none"
+                    title="Copy snippet"
                   >
-                    <button
-                      type="button"
-                      className="block focus:outline-none"
-                      title="Copy snippet"
-                    >
-                      <ClipboardSvg className="w-6 h-6" />
-                    </button>
-                  </CopyToClipboard>
-                )}
+                    <ClipboardSvg className="w-6 h-6" />
+                  </button>
+                </CopyToClipboard>
+              )}
             </div>
           </header>
           <pre className={className}>

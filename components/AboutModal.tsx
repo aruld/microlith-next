@@ -74,8 +74,10 @@ const AboutModal: React.FC = () => {
         </div>
         <Prose>
           <p>
-            I am exploring UI development using <TextLink href="https://nextjs.org">Next.js</TextLink> React framework
-            and{' '} <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>
+            I am exploring UI development using{' '}
+            <TextLink href="https://nextjs.org">Next.js</TextLink> React
+            framework and{' '}
+            <TextLink href="https://tailwindcss.com/">Tailwind CSS</TextLink>
           </p>
           <p>
             I am a software engineer with over 20 years of experience mostly in

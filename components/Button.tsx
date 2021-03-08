@@ -10,7 +10,8 @@ interface ButtonProps {
   loading?: boolean
 }
 
-const Button: React.FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({ as: Component = 'button',
+const Button: React.FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({
+  as: Component = 'button',
   children,
   className,
   variation,

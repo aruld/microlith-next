@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 
-
 export const SectionTitleSkew: React.FC<React.HTMLProps<HTMLSpanElement>> = ({
   className,
   ...rest
