@@ -1,12 +1,11 @@
-import * as React from 'react'
 import clsx from 'clsx'
+import * as React from 'react'
 
 interface BadgeProps {
   variation?: 'primary' | 'secondary' | 'tertiary'
 }
 
 const Badge: React.FC<React.HTMLAttributes<HTMLDivElement> & BadgeProps> = ({
-  children,
   variation = 'tertiary',
   className,
   ...rest
@@ -25,9 +24,7 @@ const Badge: React.FC<React.HTMLAttributes<HTMLDivElement> & BadgeProps> = ({
         }
       )}
       {...rest}
-    >
-      {children}
-    </div>
+    />
   )
 }
 
